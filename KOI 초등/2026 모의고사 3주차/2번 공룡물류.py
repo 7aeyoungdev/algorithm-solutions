@@ -5,18 +5,18 @@ a = list(map(int, input().split()))
 
 line = [0] * (n + 1)
 last = [0, 0, 0]
-i, j = 0, 0
+high, low = 0, 0
 
 for x in a:
     if last[1] > last[2]:
-        i, j = 1, 2
+        high, low = 1, 2
     else:
-        i, j = 2, 1
+        high, low = 2, 1
     
-    if last[i] < x:
-        last[i], line[x] = x, i
-    elif last[j] < x:
-        last[j], line[x] = x, j
+    if x > last[high]:
+        last[high], line[x] = x, high
+    elif x > last[low]:
+        last[low], line[x] = x, low
     else:
         print('NO')
         exit()
