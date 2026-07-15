@@ -1,8 +1,5 @@
 # https://jungol.co.kr/contest/4230/problem/2
 
-import sys
-input = sys.stdin.readline
-
 n, m, c = map(int, input().split())
 t = list(map(int, input().split()))
 t.sort()
