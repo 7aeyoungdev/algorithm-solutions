@@ -9,17 +9,16 @@ s.sort()
 
 ans = 0
 
-for i in range(n + 1):
-    # left
-    if s[i] <= 0 and -s[i] * 2 <= k:
-        right = k - (-s[i] * 2)
-        j = bisect.bisect_right(s, right)
-        ans = max(ans, j - i)
-    
-    # right
-    if s[i] >= 0 and s[i] * 2 <= k:
-        left = k - s[i] * 2
-        j = bisect.bisect_left(s, -left)
-        ans = max(ans, i - j + 1)
+for x in s:
+    if abs(x) * 2 <= k:
+        turn = k - abs(x) * 2
+
+        if x <= 0:
+            cnt = bisect.bisect_right(s, turn)- bisect.bisect_left(s, x)
+            ans = max(ans, cnt)
+
+        if x >= 0:
+            cnt = bisect.bisect_right(s, x) - bisect.bisect_left(s, -turn)
+            ans = max(ans, cnt)
 
 print(ans - 1)
