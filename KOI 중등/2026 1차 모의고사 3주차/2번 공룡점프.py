@@ -1,4 +1,4 @@
-# https://jungol.co.kr/contest/4087/problem/3
+# https://jungol.co.kr/contest/4088/problem/2
 
 from collections import deque
 
