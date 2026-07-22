@@ -1,4 +1,4 @@
-# https://jungol.co.kr/contest/4096/problem/2
+# https://jungol.co.kr/contest/4097/problem/1
 
 n = int(input())
 s = input()
