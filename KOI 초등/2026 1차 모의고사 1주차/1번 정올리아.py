@@ -8,8 +8,15 @@ ans = [0] * 4
 
 for i in range(n):
     s, a = input().split()
-    x = 0 if s == 'F' else 1
-    x += 2 if int(a) < 40 else 0
+
+    if s == 'F':
+        x = 0
+    else:
+        x = 1
+
+    if int(a) < 40:
+        x += 2
+    
     ans[x] += 1
 
 print(*ans)
