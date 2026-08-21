@@ -2,7 +2,17 @@
 
 n = int(input())
 a = list(map(int, input().split()))
+a.sort(reverse=True)
 
-p = [ x for x in a if x > 0 ]
+total = sum(a)
+ans = total
+s = 0
 
-print(sum(p) * len(p) + sum(a) - sum(p))
+for i in range(n):
+    s += a[i]
+
+    score = i * s + total
+
+    ans = max(ans, score)
+
+print(ans)
